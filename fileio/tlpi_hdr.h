@@ -21,6 +21,7 @@
 #include <stdio.h>      /* Standard I/O functions */
 #include <stdlib.h>     /* Prototypes of commonly used library functions,
                            plus EXIT_SUCCESS and EXIT_FAILURE constants */
+#include <fcntl.h>
 #include <unistd.h>     /* Prototypes for many system calls */
 #include <errno.h>      /* Declares errno and defines error constants */
 #include <string.h>     /* Commonly used string-handling functions */
@@ -41,6 +42,8 @@
 #ifdef FALSE
 #undef FALSE
 #endif
+
+#define DONE exit(0);
 
 typedef enum { FALSE, TRUE } Boolean;
 
