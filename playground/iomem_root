@@ -1,0 +1,65 @@
+00000000-00000fff : Reserved
+00001000-0009ffff : System RAM
+000e0000-000e0fff : Reserved
+000f0000-000fffff : System ROM
+00100000-001fffff : ACPI Tables
+00200000-f7ffffff : System RAM
+  01000000-022053c7 : Kernel code
+  02400000-02d8bfff : Kernel rodata
+  02e00000-0309127f : Kernel data
+  03827000-039fffff : Kernel bss
+f8000000-f8001fff : 31c56e56-e172-4851-b1e8-ba2965b60a03
+f8002000-f8003fff : 66e13a3d-3157-4941-8967-09a9c6aadc48
+f8004000-f8005fff : de2704bf-9990-42bd-96c4-64ec4a75925c
+f8006000-f8007fff : 72c92419-ec03-4ded-b5bf-dd37312b3c9c
+f8008000-f8009fff : cb43b7df-1cd5-4b00-bfb6-8977347bf484
+f800a000-f800bfff : b65686a8-6c6f-48c7-ac4b-079c591a5a79
+f800c000-f800dfff : d2b3386c-bd32-428d-abef-026fa6a90acd
+f800e000-f800ffff : 6e090451-05f4-4135-a3bf-e94984ec3028
+fec00000-fec00fff : PNP0003:00
+fee00000-fee00fff : Local APIC
+  fee00000-fee00fff : PNP0003:00
+100000000-1f3dfffff : System RAM
+9ffe00000-9ffe02fff : 31c56e56-e172-4851-b1e8-ba2965b60a03
+  9ffe00000-9ffe00fff : e172:00:00.0
+    9ffe00000-9ffe00fff : virtio-pci-modern
+  9ffe01000-9ffe01fff : e172:00:00.0
+  9ffe02000-9ffe02fff : e172:00:00.0
+    9ffe02000-9ffe02fff : virtio-pci-modern
+9ffe04000-9ffe06fff : de2704bf-9990-42bd-96c4-64ec4a75925c
+  9ffe04000-9ffe04fff : 9990:00:00.0
+    9ffe04000-9ffe04fff : virtio-pci-modern
+  9ffe05000-9ffe05fff : 9990:00:00.0
+  9ffe06000-9ffe06fff : 9990:00:00.0
+    9ffe06000-9ffe06fff : virtio-pci-modern
+9ffe08000-9ffe0afff : cb43b7df-1cd5-4b00-bfb6-8977347bf484
+  9ffe08000-9ffe08fff : 1cd5:00:00.0
+    9ffe08000-9ffe08fff : virtio-pci-modern
+  9ffe09000-9ffe09fff : 1cd5:00:00.0
+  9ffe0a000-9ffe0afff : 1cd5:00:00.0
+    9ffe0a000-9ffe0afff : virtio-pci-modern
+9ffe0c000-9ffe0efff : b65686a8-6c6f-48c7-ac4b-079c591a5a79
+  9ffe0c000-9ffe0cfff : 6c6f:00:00.0
+    9ffe0c000-9ffe0cfff : virtio-pci-modern
+  9ffe0d000-9ffe0dfff : 6c6f:00:00.0
+  9ffe0e000-9ffe0efff : 6c6f:00:00.0
+    9ffe0e000-9ffe0efff : virtio-pci-modern
+9ffe10000-bffe0ffff : 711dad3a-73ce-468b-90a9-ede6906841b2
+bffe10000-bffe12fff : d2b3386c-bd32-428d-abef-026fa6a90acd
+  bffe10000-bffe10fff : bd32:00:00.0
+    bffe10000-bffe10fff : virtio-pci-modern
+  bffe11000-bffe11fff : bd32:00:00.0
+  bffe12000-bffe12fff : bd32:00:00.0
+    bffe12000-bffe12fff : virtio-pci-modern
+bffe14000-bffe16fff : 6e090451-05f4-4135-a3bf-e94984ec3028
+  bffe14000-bffe14fff : 05f4:00:00.0
+    bffe14000-bffe14fff : virtio-pci-modern
+  bffe15000-bffe15fff : 05f4:00:00.0
+  bffe16000-bffe16fff : 05f4:00:00.0
+    bffe16000-bffe16fff : virtio-pci-modern
+c00000000-e00001fff : 72c92419-ec03-4ded-b5bf-dd37312b3c9c
+  c00000000-dffffffff : ec03:00:00.0
+    c00000000-dffffffff : virtio2
+  e00000000-e00000fff : ec03:00:00.0
+    e00000000-e00000fff : virtio-pci-modern
+  e00001000-e00001fff : ec03:00:00.0

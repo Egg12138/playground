@@ -1,0 +1,15 @@
+.rwxr-xr-x  17k aydenegg 29 Jul 23:19 a.out*
+.rw-r--r--  208 aydenegg 29 Jul 00:36 chatglm_test.py
+.rw-r--r-- 2.7k aydenegg  6 Aug 15:16 iomem_
+.rw-r--r-- 2.8k aydenegg  6 Aug 15:22 iomem_root
+.rw-r--r--  316 aydenegg  6 Aug 15:26 ioports_root
+.rw-r--r--  121 aydenegg 28 Jul 16:59 mstore.c
+.rw-r--r-- 1.5k aydenegg 28 Jul 17:00 mstore.o
+.rw-r--r--  611 aydenegg 28 Jul 17:06 mstore.s
+.rw-r--r--  587 aydenegg 28 Jul 17:05 mstore_Att.s
+.rw-r--r--  673 aydenegg  6 Aug 20:01 old_exa
+.rw-r--r--    0 aydenegg  6 Aug 20:01 old_exa_plus
+.rw-r--r--  102 aydenegg 29 Jul 22:51 play.h
+.rw-r--r-- 7.5k aydenegg  6 Aug 16:18 proc_interrupts
+.rw-r--r--  285 aydenegg 29 Jul 23:19 testnum.c
+.rw-r--r--    7 aydenegg 28 Jul 17:14 x.bin
