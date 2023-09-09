@@ -10,10 +10,11 @@
 #define dbgl(x) printf("%s => %ld\n",(#x), (x));
 #define dbgi(x) printf("%s => %d\n",(#x), (x));
 #define dbgs(x) printf("%s => \"%s\"\n",(#x), (x));
+#define dbgp(x) printf("%s @ %p\n",(#x), (x));
 #define dbga(a) \
         int i##a;\
-        int len_##arr = lenof(a);\
-        for (i##a = 0; i##a < len_##arr; i##a++) printf("%d,", a[i##a]);\
+        int len_##a = lenof(a);\
+        for (i##a = 0; i##a < len_##a; i##a++) printf("%d,", a[i##a]);\
         puts("\n");
 
 #define MIN3(a, b, c) ((a) < (b) ? ((a) < (c) ? (a) : (c)) : ((b) < (c) ? (b) : (c)))

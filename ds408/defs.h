@@ -26,8 +26,8 @@ int test_array[ARRSZ] = {0};
 void random_init_arr(int a[], int scale, int len) {
         srand(time(NULL));
         for (int i = 0; i < len; i++) {
-                a[i] = rand() % scale;
-
+                a[i] = rand() % RANGE;
         }
 }
+
 
