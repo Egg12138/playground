@@ -16,6 +16,6 @@
         int len_##a = lenof(a);\
         for (i##a = 0; i##a < len_##a; i##a++) printf("%d,", a[i##a]);\
         puts("\n");
-
 #define MIN3(a, b, c) ((a) < (b) ? ((a) < (c) ? (a) : (c)) : ((b) < (c) ? (b) : (c)))
 #define MAX3(a, b, c) ((a) > (b) ? ((a) > (c) ? (a) : (c)) : ((b) > (c) ? (b) : (c)))
+#define randin(r) (rand()%r)

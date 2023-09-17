@@ -1,3 +1,4 @@
+#include <time.h>
 typedef struct single_linked_list {
        struct single_linked_list *next; 
        int data;
@@ -30,7 +31,7 @@ int tosll(SLLHeader *head, int idx) {
 }
 
 
-#define QCAP ARRSZ
+#define QCAP 17
 #define icr(i) (((i)+1)%QCAP)
 #ifdef TAG 
 #define QSZ QCAP + 1
@@ -66,11 +67,52 @@ typedef struct single_linked_queue {
 } slq;
 
 
+
 typedef struct BiTreeNode {
         int data;
         struct BiTreeNode *left;
         struct BiTreeNode *right;
 } btnode;
+
+typedef struct WeightedBiTreeNode {
+        int weight;
+        struct WeightedBiTreeNode *left;
+        struct WeightedBiTreeNode *right;
+} wbtnode;
+
+void test_linked_bitree(wbtnode *root) {
+        srand(time(NULL));
+        wbtnode *left = (wbtnode *)malloc(sizeof(wbtnode));
+        wbtnode *right = (wbtnode *)malloc(sizeof(wbtnode));
+        wbtnode *left1 = (wbtnode *)malloc(sizeof(wbtnode));
+        wbtnode *left2 = (wbtnode *)malloc(sizeof(wbtnode));
+        wbtnode *right1 = (wbtnode *)malloc(sizeof(wbtnode));
+        wbtnode *right2 = (wbtnode *)malloc(sizeof(wbtnode));
+        root->left = left;
+        root->right = right;
+        root->weight = rand() % 10;
+        left->weight =  rand() % 10;
+        right->weight = rand() % 10;
+        left1->weight =  rand() % 10;
+        right1->weight = rand() % 10;
+        left2->weight =  rand() % 10;
+        right2->weight = rand() % 10;
+        //dbgi(root->weight);
+        //dbgi(left->weight);
+        //dbgi(left1->weight);
+        //dbgi(right1->weight);
+        //dbgi(right->weight);
+        //dbgi(right2->weight);
+        //dbgi(left2->weight);
+        left->left = left1;
+        left->right = right1; 
+        right->right = right2;
+        right->left = left2;
+}
+
+#define isleaf(n) ((n)->left == NULL && (n)->right == NULL)
+
+
 
 
 

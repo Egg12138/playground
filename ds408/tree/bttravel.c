@@ -39,5 +39,53 @@ void lrn(btnode *n) {
 }
 
 void nlr_nor(btnode *n) {
-        =        
+        btnode *p = n;
+        initstack(s);
+        while (p || !isempty(s)) {
+                if (p) {
+                        dbgi(p->data);
+                        push(s, p);
+                        p = p->left;
+                } else{
+                        p = pop(s);
+                        p = p->right;
+                }
+        }
 }
+
+void lnr_nor(btnode *n) {
+        btnode *p = n;
+        initstack(s);
+        while (p || !isempty(s)) {
+                if (p) {
+                push(s, p);
+                p = p->left;
+                } else {
+                        p = pop(s);
+                        dbgi(p->data);
+                        p = p->right;
+                }
+}}
+
+void lrn_nor(btnode *n) {
+        btnode *p = n;
+        initstack(s);
+        btnode *recent_visited = (btnode *)malloc(sizeof(btnode));
+#define NOT_ACCESS(n) ((n) != recent_visited)
+        while (p || !isempty(s))  {
+                if (p) {
+                        push(s, p);
+                        p = p->left;
+                } else {
+                        p = top(s);//not pop
+                        if (p->right && NOT_ACCESS(p->right)) p = p->right;
+                        else {
+                                p = pop(s);
+                                dbgi(p->data);
+                                recent_visited = p;
+                                p = NULL;
+                        }
+                }
+        }
+}
+
