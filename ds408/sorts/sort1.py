@@ -16,6 +16,7 @@ def test_sort(func, arr):
     func(arr.copy())
 
 
+
 def insertion_sort(arr: List[int]) -> None:
     cmp_counts = 0
     swap_counts = 0
@@ -98,33 +99,117 @@ def bubble(arr: List[int]) -> None:
     print(f"{arr=}(not sorted)") if not is_sorted(arr) else print("\tordered")
 
 def quick_sort(arr: List[int]) -> None:
+    global cmp_counts
+    global swap_counts
     cmp_counts = 0
     swap_counts = 0
 
 
+    """
+    此处的i = h + 1表示右侧的指标，它指向一个空位
+        ——最新的那个要跟pivot交换的元素移动后留下的空位
+    """
     def partition(l, h, cmp_counts, swap_counts):
-        pivot = arr[h]
-        i = l - 1
-        # arr[i] should be smaller than all of in arr
-        for k in range(l, h):
-            if arr[k] <= pivot:
+        pivot = arr[l]
+        while l < h and l > 0 and h > 0:
+            while (l < h and arr[h] > pivot):
                 cmp_counts += 1
-                i += 1
-                arr[i], arr[k] = arr[k], arr[i]
-                swap_counts += 1
-        arr[i + 1], arr[h] = arr[h], arr[i + 1]
+                h -= 1
+                arr[l] = arr[h]
+
+            while (l < h and arr[l] <= pivot):
+                cmp_counts += 1
+                l += 1
+                arr[h] = arr[l]
+
+        arr[l] = pivot
         swap_counts += 1
-        return i + 1
+        return l
     
     def quicksort_handler(l, h):
         if l < h:
-            pi = partition(l, h, cmp_counts, swap_counts)
-            quicksort_handler(l, pi - 1)
-            quicksort_handler(pi + 1, h)
+            pivotidx = partition(l, h, cmp_counts, swap_counts)
+            quicksort_handler(l, pivotidx - 1)
+            quicksort_handler(pivotidx + 1, h)
 
     quicksort_handler(0, len(arr) - 1)
     print(f"{cmp_counts=}, {swap_counts=}")
     print(f"{arr=}(not sorted)") if not is_sorted(arr) else print("\tordered")
+
+def selection_sort(arr: List[int]) -> None:
+    n = len(arr)
+    cmp_counts = 0
+    swap_counts = 0
+
+    for i in range(n):
+        min_idx = i
+        for k in range(i + 1, n):
+            if arr(min_idx) > arr[k]:
+                cmp_counts += 1
+                min_idx = k
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+        swap_counts += 1
+
+    
+    print(f"{cmp_counts=}, {swap_counts=}")
+    print(f"{arr=}(not sorted)") if not is_sorted(arr) else print("\tordered")
+
+
+
+def heap_sort(arr: List[int]) -> None:
+    n = len(arr)
+    
+    for i in range(floor(n / 2), -1, -1):
+        headpify(arr, n, i)
+
+    for i in range(n - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i] 
+        headpify(arr, i, 0)
+
+    def headpify(arr: List[int], n, i):
+        max_idx = i
+        l = 2 * i + 1
+        r = 2 * i + 2
+
+        if l < n and arr[max_idx] < arr[l]:
+            max_idx = l
+        
+        if r < n and arr[max_idx] < arr[r]:
+            arr[i], arr[max_idx] = arr[max_idx], arr[i]
+            headpify(arr, n, largest)
+        
+        
+def merge_sort(arr: List[int]) -> None:
+    if len(arr) <= 1:
+        return arr
+
+    m = floor(len(arr) / 2)
+    l = merge_sort(arr[:m])
+    r = merge_sort(arr[m:])
+
+    result = merge(l, r)
+    print(f"{result=}(not sorted)") if not is_sorted(arr) else print("\tordered")
+    
+    return result
+
+def merge(llist: List[int], rlist: List[int]):
+    result = [] 
+    i = k = 0
+
+    while i < len(llist) and k < len(rlist):
+        if (llist[i] < rlist[k]):
+            result.append(llist[i])
+            i += 1
+        else:
+            result.append(rlist[k])
+            k += 1
+
+    result += llist[i:]
+    result += rlist[k:]
+
+    
+    return result
+
 
 if __name__ == '__main__':
     n = int(sys.argv[1])    
@@ -136,4 +221,5 @@ if __name__ == '__main__':
     test_sort(shell_sort, a1)
     test_sort(bubble, a1)
     test_sort(quick_sort, a1)
+    test_sort(merge_sort, a1)
 

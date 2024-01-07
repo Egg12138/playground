@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdint.h>
 #include <sys/types.h>
+#include <assert.h>
 #include "tlpi_hdr.h"
 
 #define lenof(a) (sizeof(a) / sizeof(a[0]))
